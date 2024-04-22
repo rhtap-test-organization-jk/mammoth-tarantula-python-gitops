@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mammoth-tarantula-python-gitops
+  description: This is GitOps manifest for mammoth-tarantula-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: mammoth-tarantula-python
+    janus-idp.io/tekton: mammoth-tarantula-python 
+    backstage.io/kubernetes-id: mammoth-tarantula-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mammoth-tarantula-python
